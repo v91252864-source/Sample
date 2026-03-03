@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <style>
-/* …existing code… */
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome to Forever Living Family</title>
 
+<style>
+
+/* Background */
 body {
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    background: linear-gradient(135deg, #43cea2, #185a9d);
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     overflow: hidden;
 }
 
+/* Registration Form */
 .register-form {
     position: absolute;
     top: 50%;
@@ -19,51 +24,94 @@ body {
     transform: translate(-50%, -50%);
     background: rgba(255,255,255,0.95);
     padding: 2rem 3rem;
-    border-radius: 8px;
-    box-shadow: 0 8px 20px rgba(0,0,0,.2);
-    width: 320px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,.3);
+    width: 350px;
 }
 
 .register-form h1 {
-    margin: 0 0 1rem;
+    margin: 0 0 .5rem;
     text-align: center;
-    color: #333;
+    color: #185a9d;
 }
 
-.register-form .field {
-    margin-bottom: 1rem;
-}
-
-.register-form .field label {
-    display: block;
-    margin-bottom: .3rem;
+.subtitle {
+    text-align: center;
+    font-size: .9rem;
+    margin-bottom: 1.2rem;
     color: #555;
 }
 
-.register-form .field input {
-    width: 100%;
-    padding: .5rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1rem;
+.field {
+    margin-bottom: 1rem;
 }
 
-.register-form button {
+.field label {
+    display: block;
+    margin-bottom: .3rem;
+    color: #444;
+    font-size: .9rem;
+}
+
+.field input {
     width: 100%;
-    padding: .75rem;
+    padding: .6rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: .95rem;
+}
+
+button {
+    width: 100%;
+    padding: .8rem;
     border: none;
-    border-radius: 4px;
-    background: #ff6b6b;
-    color: #fff;
+    border-radius: 6px;
+    background: #43cea2;
+    color: white;
     font-size: 1rem;
     cursor: pointer;
-    transition: background .3s;
+    transition: .3s;
 }
 
-.register-form button:hover {
-    background: #ff4757;
+button:hover {
+    background: #2bbf91;
 }
 
+/* Social Buttons */
+.social-login {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.social-login p {
+    margin: .5rem 0;
+    font-size: .85rem;
+    color: #666;
+}
+
+.social-btn {
+    width: 48%;
+    padding: .5rem;
+    margin: .2rem;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.fb {
+    background: #1877f2;
+}
+
+.insta {
+    background: linear-gradient(45deg, #feda75, #d62976, #962fbf);
+}
+
+.social-btn:hover {
+    opacity: .9;
+}
+
+/* Spark Background */
 .spark-wrapper {
     position: absolute;
     width: 100%;
@@ -76,12 +124,12 @@ body {
 
 .spark {
     position: absolute;
-    width: 4px;
-    height: 4px;
+    width: 3px;
+    height: 3px;
     background: #fff;
     border-radius: 50%;
-    box-shadow: 0 0 8px 2px #fff;
-    animation: sparkle 5s linear infinite;
+    box-shadow: 0 0 12px 4px rgba(255,255,255,0.8);
+    animation: sparkle 6s linear infinite;
 }
 
 @keyframes sparkle {
@@ -90,33 +138,74 @@ body {
     100% { transform: translate(var(--x2), var(--y2)) scale(0); }
 }
 
-/* …existing code… */
-
-  </style>    <meta charset="utf-8">
-    <title>Register – Vedant Deshmukh</title>
-    <link rel="stylesheet" href="css/styles.css">
+</style>
 </head>
+
 <body>
-    <!-- spark container – script will populate it with little glowing dots -->
-    <div class="spark-wrapper"></div>
 
-    <form class="register-form" action="#" method="post">
-        <h1>Create account</h1>
-        <div class="field">
-            <label for="name">Name</label>
-            <input id="name" name="name" required>
-        </div>
-        <div class="field">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
-        </div>
-        <div class="field">
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" required>
-        </div>
-        <button type="submit">Register</button>
-    </form>
+<div class="spark-wrapper"></div>
 
-    <script src="js/main.js"></script>
+<form class="register-form">
+    <h1>🌿 Welcome to Forever Living Family</h1>
+    <p class="subtitle">Join Our Social Media Marketing Community</p>
+
+    <div class="field">
+        <label>Full Name</label>
+        <input type="text" required>
+    </div>
+
+    <div class="field">
+        <label>Email Address</label>
+        <input type="email" required>
+    </div>
+
+    <div class="field">
+        <label>Mobile Number</label>
+        <input type="tel" required>
+    </div>
+
+    <div class="field">
+        <label>Create Password</label>
+        <input type="password" required>
+    </div>
+
+    <button type="submit">Join Now 🚀</button>
+
+    <div class="social-login">
+        <p>Or Register With</p>
+        <button type="button" class="social-btn fb">Facebook</button>
+        <button type="button" class="social-btn insta">Instagram</button>
+    </div>
+</form>
+
+<script>
+const wrapper = document.querySelector('.spark-wrapper');
+const sparkCount = 70;
+
+for (let i = 0; i < sparkCount; i++) {
+    const spark = document.createElement('div');
+    spark.classList.add('spark');
+
+    const x0 = Math.random() * window.innerWidth + 'px';
+    const y0 = Math.random() * window.innerHeight + 'px';
+    const x1 = Math.random() * window.innerWidth + 'px';
+    const y1 = Math.random() * window.innerHeight + 'px';
+    const x2 = Math.random() * window.innerWidth + 'px';
+    const y2 = Math.random() * window.innerHeight + 'px';
+
+    spark.style.setProperty('--x0', x0);
+    spark.style.setProperty('--y0', y0);
+    spark.style.setProperty('--x1', x1);
+    spark.style.setProperty('--y1', y1);
+    spark.style.setProperty('--x2', x2);
+    spark.style.setProperty('--y2', y2);
+
+    spark.style.animationDuration = (4 + Math.random() * 4) + 's';
+    spark.style.animationDelay = Math.random() * 5 + 's';
+
+    wrapper.appendChild(spark);
+}
+</script>
+
 </body>
 </html>
