@@ -3,139 +3,100 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Welcome to Forever Living Family</title>
+<title>Forever Living Family Registration</title>
 
 <style>
 
-/* Background */
 body {
     margin: 0;
     padding: 0;
     background: linear-gradient(135deg, #43cea2, #185a9d);
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    overflow: hidden;
+    font-family: "Segoe UI", sans-serif;
 }
 
-/* Registration Form */
+/* Form Box */
 .register-form {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(255,255,255,0.95);
-    padding: 2rem 3rem;
+    width: 400px;
+    margin: 40px auto;
+    background: #ffffff;
+    padding: 25px;
     border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0,0,0,.3);
-    width: 350px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
-.register-form h1 {
-    margin: 0 0 .5rem;
+.logo {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.logo img {
+    width: 100px;
+}
+
+h1 {
     text-align: center;
     color: #185a9d;
+    margin-bottom: 5px;
 }
 
-.subtitle {
+.tagline {
     text-align: center;
-    font-size: .9rem;
-    margin-bottom: 1.2rem;
+    font-size: 14px;
     color: #555;
+    margin-bottom: 20px;
 }
 
 .field {
-    margin-bottom: 1rem;
+    margin-bottom: 12px;
 }
 
 .field label {
-    display: block;
-    margin-bottom: .3rem;
-    color: #444;
-    font-size: .9rem;
+    font-size: 14px;
+    color: #333;
 }
 
-.field input {
+.field input, .field textarea {
     width: 100%;
-    padding: .6rem;
-    border: 1px solid #ccc;
+    padding: 8px;
+    margin-top: 4px;
     border-radius: 6px;
-    font-size: .95rem;
+    border: 1px solid #ccc;
 }
 
 button {
     width: 100%;
-    padding: .8rem;
+    padding: 10px;
+    background: #43cea2;
     border: none;
     border-radius: 6px;
-    background: #43cea2;
     color: white;
-    font-size: 1rem;
+    font-size: 16px;
     cursor: pointer;
-    transition: .3s;
 }
 
 button:hover {
     background: #2bbf91;
 }
 
-/* Social Buttons */
-.social-login {
+/* Success Message */
+#successBox {
+    display: none;
+    width: 400px;
+    margin: 20px auto;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+#successBox h2 {
+    color: green;
     text-align: center;
-    margin-top: 1rem;
 }
 
-.social-login p {
-    margin: .5rem 0;
-    font-size: .85rem;
-    color: #666;
-}
-
-.social-btn {
-    width: 48%;
-    padding: .5rem;
-    margin: .2rem;
-    border: none;
-    border-radius: 6px;
-    color: #fff;
-    cursor: pointer;
-}
-
-.fb {
-    background: #1877f2;
-}
-
-.insta {
-    background: linear-gradient(45deg, #feda75, #d62976, #962fbf);
-}
-
-.social-btn:hover {
-    opacity: .9;
-}
-
-/* Spark Background */
-.spark-wrapper {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    overflow: hidden;
-}
-
-.spark {
-    position: absolute;
-    width: 3px;
-    height: 3px;
-    background: #fff;
-    border-radius: 50%;
-    box-shadow: 0 0 12px 4px rgba(255,255,255,0.8);
-    animation: sparkle 6s linear infinite;
-}
-
-@keyframes sparkle {
-    0%   { transform: translate(var(--x0), var(--y0)) scale(0); }
-    50%  { transform: translate(var(--x1), var(--y1)) scale(1); }
-    100% { transform: translate(var(--x2), var(--y2)) scale(0); }
+.data-box {
+    font-size: 14px;
+    margin-top: 10px;
 }
 
 </style>
@@ -143,68 +104,88 @@ button:hover {
 
 <body>
 
-<div class="spark-wrapper"></div>
+<form class="register-form" id="regForm">
 
-<form class="register-form">
-    <h1>🌿 Welcome to Forever Living Family</h1>
-    <p class="subtitle">Join Our Social Media Marketing Community</p>
+    <div class="logo">
+        <!-- Official Forever Living Logo -->
+        <img src="https://upload.wikimedia.org/wikipedia/en/5/5c/Forever_Living_Products_logo.png">
+    </div>
+
+    <h1>Welcome to Forever Living Family 🌿</h1>
+    <p class="tagline">
+        Join Now to Earning – Zero to Hero Success Your Dream 🚀
+    </p>
 
     <div class="field">
         <label>Full Name</label>
-        <input type="text" required>
+        <input type="text" id="name" required>
     </div>
 
     <div class="field">
-        <label>Email Address</label>
-        <input type="email" required>
+        <label>Email</label>
+        <input type="email" id="email" required>
     </div>
 
     <div class="field">
         <label>Mobile Number</label>
-        <input type="tel" required>
+        <input type="tel" id="phone" required>
     </div>
 
     <div class="field">
-        <label>Create Password</label>
-        <input type="password" required>
+        <label>Date of Birth</label>
+        <input type="date" id="dob" required>
+    </div>
+
+    <div class="field">
+        <label>City</label>
+        <input type="text" id="city" required>
+    </div>
+
+    <div class="field">
+        <label>Address</label>
+        <textarea id="address" rows="2" required></textarea>
+    </div>
+
+    <div class="field">
+        <label>Password</label>
+        <input type="password" id="password" required>
     </div>
 
     <button type="submit">Join Now 🚀</button>
 
-    <div class="social-login">
-        <p>Or Register With</p>
-        <button type="button" class="social-btn fb">Facebook</button>
-        <button type="button" class="social-btn insta">Instagram</button>
-    </div>
 </form>
 
+<!-- Success Box -->
+<div id="successBox">
+    <h2>Registration Successful 🎉</h2>
+    <div class="data-box" id="userData"></div>
+</div>
+
 <script>
-const wrapper = document.querySelector('.spark-wrapper');
-const sparkCount = 70;
 
-for (let i = 0; i < sparkCount; i++) {
-    const spark = document.createElement('div');
-    spark.classList.add('spark');
+document.getElementById("regForm").addEventListener("submit", function(e) {
+    e.preventDefault();
 
-    const x0 = Math.random() * window.innerWidth + 'px';
-    const y0 = Math.random() * window.innerHeight + 'px';
-    const x1 = Math.random() * window.innerWidth + 'px';
-    const y1 = Math.random() * window.innerHeight + 'px';
-    const x2 = Math.random() * window.innerWidth + 'px';
-    const y2 = Math.random() * window.innerHeight + 'px';
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const phone = document.getElementById("phone").value;
+    const dob = document.getElementById("dob").value;
+    const city = document.getElementById("city").value;
+    const address = document.getElementById("address").value;
 
-    spark.style.setProperty('--x0', x0);
-    spark.style.setProperty('--y0', y0);
-    spark.style.setProperty('--x1', x1);
-    spark.style.setProperty('--y1', y1);
-    spark.style.setProperty('--x2', x2);
-    spark.style.setProperty('--y2', y2);
+    document.getElementById("regForm").style.display = "none";
 
-    spark.style.animationDuration = (4 + Math.random() * 4) + 's';
-    spark.style.animationDelay = Math.random() * 5 + 's';
+    document.getElementById("successBox").style.display = "block";
+    document.getElementById("userData").innerHTML = `
+        <strong>Name:</strong> ${name} <br>
+        <strong>Email:</strong> ${email} <br>
+        <strong>Mobile:</strong> ${phone} <br>
+        <strong>DOB:</strong> ${dob} <br>
+        <strong>City:</strong> ${city} <br>
+        <strong>Address:</strong> ${address}
+    `;
+});
 
-    wrapper.appendChild(spark);
-}
 </script>
 
 </body>
